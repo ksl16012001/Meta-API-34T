@@ -13,7 +13,7 @@ with open("config.json", encoding="utf-8") as f:
 
 ACCESS_TOKEN = config["ACCESS_TOKEN"]
 PAGE_ID = config["PAGE_ID"]
-SUB_NAME = config["sub"]
+SUB_NAME = config["IDPOST"]
 DB=config["DB"]
 mongo_client = MongoClient(DB)
 db = mongo_client.myVirtualDatabase
