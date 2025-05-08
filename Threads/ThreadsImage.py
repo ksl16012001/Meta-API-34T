@@ -30,7 +30,7 @@ def create_threads_container(caption: str, image_url: str = None):
     if image_url:
         payload["image_url"] = image_url
 
-    response = requests.post(url, params=payload)
+    response = requests.post(url, json=payload)
     response.raise_for_status()
     container_id = response.json().get("id")
     print(f"[✅] Media container created: {container_id}")
@@ -58,21 +58,15 @@ def publish_container(container_id):
         "creation_id": container_id,
         "access_token": ACCESS_TOKEN
     }
-    response = requests.post(url, params=payload)
+    response = requests.post(url, json=payload)
     response.raise_for_status()
     thread_id = response.json().get("id")
     print(f"[🎉] Thread published successfully! ID: {thread_id}")
     return thread_id
 
 # === Posting flow ===
-# === Posting flow ===
 async def post_from_db(delay_seconds: int):
-    posts = reddit_collection.find({
-        "subreddit": SUB_NAME,
-        "status": 0,
-        "social": "Threads"  # Chỉ lấy bài dành cho Threads
-    })
-
+    posts = reddit_collection.find({"subreddit": SUB_NAME, "status": 0})
     for post in posts:
         title = post.get("Title", "").strip()
         content = post.get("content", "").strip()
