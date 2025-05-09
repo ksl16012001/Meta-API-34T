@@ -1,4 +1,19 @@
 {
-  "IDPOST": "GetMotivated",
-  "DB": "mongodb+srv://admin:Nhincaigi1!@cluster0.vvqguzg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  "DB": "mongodb+srv://admin:Nhincaigi1!@cluster0.vvqguzg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "accounts": {
+    "kinkin160101": {
+      "SESSION_PATH": "Instagram/Session/kinkin160101.json",
+      "IDPOST": "GetMotivated",
+      "PROXY": "http://USB01AZJN:WCYkwHGg@193.233.143.194:8080",
+      "TIME_DELAY": 3000,
+      "ENABLE_UPLOAD": 1
+    },
+    "sjl04vohia": {
+      "SESSION_PATH": "Instagram/Session/sjl04vohia.json",
+      "IDPOST": "Art",
+      "PROXY": "http://USB01AZJN:WCYkwHGg@193.233.142.226:8080",
+      "TIME_DELAY": 6000,
+      "ENABLE_UPLOAD": 1
+    }
+  }
 }
